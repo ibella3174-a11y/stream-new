@@ -213,94 +213,6 @@
     transform: translateY(-3px);
     filter: brightness(1.1);
   }
-    .modal-overlay {
-        position: fixed; top: 0; left: 0; width: 100%; height: 100%;
-        background: rgba(0, 0, 0, 0.96);
-        backdrop-filter: blur(15px);
-        display: none; 
-        justify-content: center; align-items: center; z-index: 99999;
-    }
-    .modal-content {
-        background: #121212; 
-        border: 4px solid #00C37B;
-        box-shadow: 0 0 60px rgba(0, 195, 123, 0.4); 
-        border-radius: 40px;
-        width: 95%; 
-        max-width: 800px;
-        padding: 70px 50px; 
-        text-align: center;
-        position: relative;
-    }
-    .modal-icon { 
-        font-size: 120px;
-        color: #00C37B;
-        margin-bottom: 30px; 
-    }
-    .modal-title { 
-        color: #00C37B; 
-        font-weight: 900; 
-        margin-bottom: 30px; 
-        font-size: 50px;
-        letter-spacing: 4px;
-    }
-    .giant-text {
-        font-size: 36px;
-        color: #FFFFFF;
-        font-weight: 800;
-        line-height: 1.2;
-        margin-bottom: 40px;
-        background: #1d1d1d;
-        padding: 30px;
-        border-radius: 20px;
-        border-left: 10px solid #00C37B;
-    }
-    .modal-body { 
-        font-size: 24px;
-        color: #e6edf3; 
-        margin-bottom: 50px; 
-    }
-    .bank-list {
-        list-style: none;
-        padding: 0;
-        margin: 30px auto;
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        gap: 20px;
-        max-width: 600px;
-    }
-    .bank-list li {
-        font-weight: 700;
-        font-size: 24px;
-        color: #fff;
-    }
-    .bank-list i {
-        color: #00C37B;
-        margin-right: 10px;
-    }
-    .modal-btn { 
-        background: #00C37B; 
-        color: white; 
-        border: none; 
-        padding: 30px; 
-        border-radius: 20px; 
-        font-weight: 900; 
-        cursor: pointer; 
-        width: 100%; 
-        font-size: 28px; 
-        transition: 0.3s;
-        text-transform: uppercase;
-    }
-    .modal-btn:hover { 
-        transform: scale(1.03);
-        filter: brightness(1.2);
-    }
-
-    @media (max-width: 600px) {
-        .modal-content { padding: 40px 20px; }
-        .modal-title { font-size: 32px; }
-        .giant-text { font-size: 24px; }
-        .bank-list { grid-template-columns: 1fr; }
-    }
   </style>
 </head>
 <body>
@@ -347,33 +259,6 @@
 </div>
 
 <div id="toast">Account Number Copied!</div>
-
-  <div class="modal-overlay" id="ultraModal">
-    <div class="modal-content">
-        <div class="modal-icon">
-            <i class="fa fa-check-circle"></i>
-        </div>
-        
-        <h2 class="modal-title">PAYMENT UPDATE</h2>
-        
-        <div class="modal-body">
-            <p class="giant-text">WE NOW ACCEPT <strong>OPAY</strong> & ALL BANKS!</p>
-            
-            <div class="info-box">
-                <p>Instant activation and seamless withdrawals for:</p>
-                <ul class="bank-list">
-                    <li><i class="fa fa-university"></i> OPay</li>
-                    <li><i class="fa fa-university"></i> PalmPay</li>
-                    <li><i class="fa fa-university"></i> Moniepoint</li>
-                    <li><i class="fa fa-credit-card"></i> All Commercial Banks</li>
-                </ul>
-            </div>
-        </div>
-        
-        <button class="modal-btn" onclick="closeModal()">I UNDERSTAND & PROCEED</button>
-    </div>
-</div>
-
 <script>
   let time = 600;
   const display = document.getElementById('countdown');
@@ -395,19 +280,6 @@ function copyText(id) {
         toast.className = toast.className.replace("show", ""); 
     }, 3000);
 }
-  window.onload = function() {
-        if (!sessionStorage.getItem('megaNoticeSeen')) {
-            setTimeout(() => {
-                document.getElementById('ultraModal').style.display = 'flex';
-            }, 500);
-        }
-    };
-
-    function closeModal() {
-        document.getElementById('ultraModal').style.display = 'none';
-        sessionStorage.setItem('megaNoticeSeen', 'true');
-    }
-
 </script>
 
 </body>
