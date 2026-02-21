@@ -19,6 +19,10 @@
 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- ============================================ -->
+    <!-- SEO & METADATA (GOOGLE ADS OPTIMIZED)        -->
+    <!-- ============================================ -->
     <title>Stream - Premier Platform for Digital Gigs & Skills in Africa</title>
     <meta name="description" content="Join Stream (streamafrica.ng) to access freelance gigs, media tasks, and digital skill training. The ultimate ecosystem for remote work and personal development in Nigeria.">
     <meta name="keywords" content="Freelance Jobs Nigeria, Digital Marketing Training, Social Media Gigs, Remote Work Africa, Stream Africa, Skill Acquisition, Online Tasks">
@@ -169,6 +173,10 @@
                 background-image: url('assets/desktop-background.jpg');
             }
         }
+
+        /* 
+         * Navbar Styling - Colourless Glassmorph 
+         */
         .navbar {
             z-index: 1030;
             padding-top: 1.5rem;
@@ -737,18 +745,24 @@
             text-decoration: none;
             border-radius: 50px;
             z-index: 1040;
+            
+            /* Initial state */
             transform: translateY(150%);
             opacity: 0;
+            /* Transition for appearance, and specific transition for 'bottom' for footer docking */
             transition: transform 0.4s ease, opacity 0.4s ease, bottom 0.1s linear;
         }
 
         #mobile-sticky-signup.show-sticky {
             transform: translateY(0);
             opacity: 1;
-            background: rgba(255, 255, 255, 0.08); 
-            backdrop-filter: blur(6px); 
+            
+            /* Colourless Liquidy Glass Effect */
+            background: rgba(255, 255, 255, 0.08); /* Very transparent */
+            backdrop-filter: blur(6px); /* Less blur */
             -webkit-backdrop-filter: blur(6px);
             border: 1px solid rgba(255, 255, 255, 0.25);
+            /* Subtle shine and soft shadow */
             box-shadow: 
                 0 10px 30px rgba(0, 0, 0, 0.1), 
                 inset 0 0 15px rgba(255, 255, 255, 0.1);
@@ -758,7 +772,9 @@
     </style>
 </head>
 <body>
+
     <div class="page-wrapper">
+        <!-- Main Hero Section -->
         <section id="hero-section">
             <nav class="navbar navbar-expand-lg fixed-top">
                 <div class="container">
@@ -783,6 +799,8 @@
                     </div>
                 </div>
             </nav>
+
+            <!-- Clickable Hero Images -->
             <div class="hero-image-wrapper">
                  <a href="register.html" class="hero-image-link d-none d-lg-block">
                     <img src="hero-image-mobile.png" alt="Hero Desktop" class="hero-img" data-aos="fade-in" data-aos-duration="1200" data-aos-delay="200">
@@ -813,9 +831,12 @@
                 </div>
             </div>
         </section>
+        
+        <!-- About Section -->
         <section id="about-section" class="section-padding">
             <div class="container">
                 <div class="row align-items-center">
+                    <!-- Clickable Image Column -->
                     <div class="col-lg-6 mb-5 mb-lg-0" data-aos="fade-right">
                         <a href="register.html" class="d-block">
                             <div class="about-image-wrapper">
@@ -823,6 +844,8 @@
                             </div>
                         </a>
                     </div>
+                    
+                    <!-- Text Column -->
                     <div class="col-lg-6" data-aos="fade-left">
                         <div class="ps-lg-4 text-center text-lg-start">
                             <h2 class="section-title glow-text">Who are we?</h2>
@@ -1150,8 +1173,6 @@
                     $btn.removeClass('show-sticky');
                 }
 
-                // 3. Footer Docking Logic
-                // If scroll bottom hits the footer top, push the button up so it sticks to the footer area
                 if (scrollTop + windowHeight > footerOffset) {
                     var overlap = (scrollTop + windowHeight) - footerOffset;
                     $btn.css('bottom', (30 + overlap) + 'px');
@@ -1160,67 +1181,6 @@
                 }
             });
         });
-      <script>
-const popup = document.getElementById('popup-container');
-const users = [
-    { name: "Olakunle", city: "Lagos", country: "Nigeria", flag: "🇳🇬", currency: "₦" },
-    { name: "Chidi", city: "Enugu", country: "Nigeria", flag: "🇳🇬", currency: "₦" },
-    { name: "Amina", city: "Kano", country: "Nigeria", flag: "🇳🇬", currency: "₦" },
-    { name: "Blessing", city: "Port Harcourt", country: "Nigeria", flag: "🇳🇬", currency: "₦" },
-    { name: "Tunde", city: "Ibadan", country: "Nigeria", flag: "🇳🇬", currency: "₦" },
-    { name: "Chinaza", city: "Abuja", country: "Nigeria", flag: "🇳🇬", currency: "₦" },
-    { name: "Samuel", city: "Benin City", country: "Nigeria", flag: "🇳🇬", currency: "₦" },
-    { name: "Ngozi", city: "Onitsha", country: "Nigeria", flag: "🇳🇬", currency: "₦" },
-    { name: "Segun", city: "Abeokuta", country: "Nigeria", flag: "🇳🇬", currency: "₦" },
-    { name: "Ibrahim", city: "Kaduna", country: "Nigeria", flag: "🇳🇬", currency: "₦" },
-    { name: "Joy", city: "Warri", country: "Nigeria", flag: "🇳🇬", currency: "₦" },
-    { name: "Emeka", city: "Owerri", country: "Nigeria", flag: "🇳🇬", currency: "₦" },
-    { name: "Fatima", city: "Sokoto", country: "Nigeria", flag: "🇳🇬", currency: "₦" },
-    { name: "Victor", city: "Jos", country: "Nigeria", flag: "🇳🇬", currency: "₦" },
-    { name: "Bukola", city: "Ilorin", country: "Nigeria", flag: "🇳🇬", currency: "₦" },
-    { name: "Pascal", city: "Douala", country: "Cameroon", flag: "🇨🇲", currency: "CFA" },
-    { name: "Manu", city: "Yaoundé", country: "Cameroon", flag: "🇨🇲", currency: "CFA" },
-    { name: "Eto'o", city: "Bamenda", country: "Cameroon", flag: "🇨🇲", currency: "CFA" },
-    { name: "Brenda", city: "Garoua", country: "Cameroon", flag: "🇨🇲", currency: "CFA" },
-    { name: "Achille", city: "Bafoussam", country: "Cameroon", flag: "🇨🇲", currency: "CFA" },
-    { name: "Christelle", city: "Maroua", country: "Cameroon", flag: "🇨🇲", currency: "CFA" },
-    { name: "Fabrice", city: "Ngaoundéré", country: "Cameroon", flag: "🇨🇲", currency: "CFA" },
-    { name: "Giselle", city: "Kribi", country: "Cameroon", flag: "🇨🇲", currency: "CFA" },
-    { name: "Henri", city: "Buea", country: "Cameroon", flag: "🇨🇲", currency: "CFA" },
-    { name: "Isidore", city: "Limbe", country: "Cameroon", flag: "🇨🇲", currency: "CFA" },
-    { name: "Jean", city: "Dschang", country: "Cameroon", flag: "🇨🇲", currency: "CFA" },
-    { name: "Kelly", city: "Ebolowa", country: "Cameroon", flag: "🇨🇲", currency: "CFA" },
-    { name: "Luc", city: "Foumban", country: "Cameroon", flag: "🇨🇲", currency: "CFA" },
-    { name: "Marie", city: "Bertoua", country: "Cameroon", flag: "🇨🇲", currency: "CFA" },
-    { name: "Nadine", city: "Sangmélima", country: "Cameroon", flag: "🇨🇲", currency: "CFA" }
-];
-
-function showPopup() {
-    const user = users[Math.floor(Math.random() * users.length)];
-    const activities = [
-        { text: "just withdrew", detail: `EARNINGS — ${user.currency}${Math.floor(Math.random() * 5000) + 1000}` },
-        { text: "activated plan:", detail: "STREAM PREMIUM GOLD" },
-        { text: "just subscribed to", detail: `STREAM AFRICA — ${user.currency}${Math.floor(Math.random() * 2000) + 500}` }
-    ];
-    const act = activities[Math.floor(Math.random() * activities.length)];
-
-    document.getElementById('user-flag').innerText = user.flag;
-    document.getElementById('user-name').innerText = user.name;
-    document.getElementById('user-location').innerText = user.city;
-    document.getElementById('user-action').innerText = act.text;
-    document.getElementById('activity-detail').innerText = act.detail;
-    document.getElementById('time-ago').innerText = `${Math.floor(Math.random() * 45) + 1} mins ago`;
-
-    popup.classList.remove('popup-hidden');
-    popup.classList.add('popup-visible');
-
-    setTimeout(() => {
-        popup.classList.remove('popup-visible');
-        popup.classList.add('popup-hidden');
-    }, 5000);
-}
-setInterval(showPopup, 10000);
-setTimeout(showPopup, 2000);
     </script>
 </body>
 </html>
