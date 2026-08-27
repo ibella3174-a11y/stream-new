@@ -3,169 +3,177 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Service Suspended - Payment Required</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    
+    <title>External Destination Notice</title>
     <style>
-        :root {
-            --primary-color: #ef4444; /* Changed to Red for urgency */
-            --text-dark: #1e293b;
-            --text-light: #64748b;
-            --warning-bg: #fef2f2;
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
         }
 
         body {
-            background-color: #f8fafc;
-            color: var(--text-dark);
-            font-family: 'Inter', system-ui, -apple-system, sans-serif;
+            background: #f8fafc; /* Clean, light enterprise background */
+            color: #0f172a;
             display: flex;
-            align-items: center;
             justify-content: center;
-            min-height: 100vh;
-            margin: 0;
+            align-items: center;
+            height: 100vh;
+            text-align: center;
             padding: 20px;
         }
 
         .container {
-            max-width: 550px;
+            max-width: 520px;
             width: 100%;
-            padding: 40px;
-            background: white;
-            border-radius: 24px;
-            box-shadow: 0 20px 50px rgba(0,0,0,0.1);
-            text-align: center;
-            border: 1px solid #fee2e2;
+            padding: 40px 30px;
+            background: #ffffff;
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+            border: 1px solid #e2e8f0;
         }
 
-        .icon-box {
-            font-size: 4rem;
-            color: var(--primary-color);
-            margin-bottom: 20px;
-            animation: pulse 2s infinite;
-        }
-
-        @keyframes pulse {
-            0% { transform: scale(1); opacity: 1; }
-            50% { transform: scale(1.1); opacity: 0.8; }
-            100% { transform: scale(1); opacity: 1; }
+        .shield-icon {
+            width: 56px;
+            height: 56px;
+            background: #eff6ff;
+            color: #2563eb;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 20px auto;
+            font-size: 26px;
         }
 
         h1 {
-            font-size: 2.5rem;
-            margin: 0 0 10px 0;
-            font-weight: 800;
-            color: #b91c1c;
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-bottom: 10px;
+            color: #0f172a;
         }
 
-        .status-badge {
-            display: inline-block;
-            background: var(--warning-bg);
-            color: var(--primary-color);
-            padding: 6px 16px;
-            border-radius: 99px;
-            font-weight: 700;
-            font-size: 0.85rem;
-            text-transform: uppercase;
-            margin-bottom: 20px;
-            border: 1px solid #fecaca;
+        .destination-url {
+            font-size: 0.9rem;
+            color: #64748b;
+            background: #f1f5f9;
+            padding: 8px 12px;
+            border-radius: 6px;
+            word-break: break-all;
+            margin-bottom: 24px;
+            border: 1px solid #cbd5e1;
+            font-family: monospace;
         }
 
         p {
-            color: var(--text-light);
-            font-size: 1.1rem;
-            line-height: 1.6;
-            margin-bottom: 25px;
+            font-size: 0.95rem;
+            color: #475569;
+            line-height: 1.5;
+            margin-bottom: 24px;
         }
 
-        .debt-notice {
-            background: #fff7ed;
-            border-left: 4px solid #f97316;
-            padding: 15px;
-            text-align: left;
-            margin-bottom: 30px;
-            border-radius: 8px;
+        .redirect-status {
+            font-size: 0.9rem;
+            color: #64748b;
+            margin-bottom: 20px;
         }
 
-        .debt-notice strong {
-            color: #9a3412;
-            display: block;
-            margin-bottom: 5px;
+        .countdown {
+            font-weight: 600;
+            color: #2563eb;
+        }
+
+        .btn-group {
+            display: flex;
+            gap: 12px;
+            justify-content: center;
         }
 
         .btn {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            gap: 10px;
-            padding: 14px 28px;
-            background-color: var(--text-dark);
-            color: white;
-            text-decoration: none;
-            border-radius: 12px;
-            font-weight: 600;
-            transition: all 0.3s ease;
-            width: 100%;
-            box-sizing: border-box;
-        }
-
-        .btn:hover {
-            background-color: #000;
-            transform: translateY(-2px);
-        }
-
-        .footer-links {
-            margin-top: 30px;
-            padding-top: 20px;
-            border-top: 1px solid #e2e8f0;
-            display: flex;
-            flex-direction: column;
-            gap: 10px;
-        }
-
-        .footer-links a {
-            color: var(--text-light);
-            text-decoration: none;
+            display: inline-block;
+            padding: 10px 20px;
             font-size: 0.95rem;
+            text-decoration: none;
             font-weight: 500;
+            border-radius: 6px;
+            transition: all 0.2s ease;
+            cursor: pointer;
         }
 
-        .footer-links a:hover {
-            color: var(--primary-color);
+        .btn-primary {
+            background: #2563eb;
+            color: #ffffff;
+            border: 1px solid #2563eb;
         }
 
-        @media (max-width: 480px) {
-            .container { padding: 30px 20px; }
-            h1 { font-size: 2rem; }
+        .btn-primary:hover {
+            background: #1d4ed8;
+        }
+
+        .btn-secondary {
+            background: #ffffff;
+            color: #475569;
+            border: 1px solid #cbd5e1;
+        }
+
+        .btn-secondary:hover {
+            background: #f8fafc;
+            color: #0f172a;
+        }
+
+        .footer-note {
+            margin-top: 30px;
+            font-size: 0.8rem;
+            color: #94a3b8;
+            border-top: 1px solid #f1f5f9;
+            padding-top: 15px;
         }
     </style>
 </head>
 <body>
 
     <div class="container">
-        <div class="icon-box">
-            <i class="fas fa-hand-holding-dollar"></i>
-        </div>
+        <div class="shield-icon">🛡️</div>
+        <h1>Leaving Safe Partner Network</h1>
+        <p>You are now being redirected to an external verified advertiser page. Please review the destination link below:</p>
         
-        <div class="status-badge">Service Interruption</div>
-        <h1>Access Restricted</h1>
-        
-        <p>This website has been temporarily suspended. Access to the requested page is unavailable due to an <strong>unresolved administrative matter</strong>.</p>
-        
-        <div class="debt-notice">
-            <strong><i class="fas fa-circle-exclamation"></i> Notice to Owner:</strong>
-            Standard service fees remains outstanding. Please settle the balance to restore full site functionality immediately.
-        </div>
-        
-        <a href="https://t.me/clicksensewithDivineTv/695" class="btn">
-            <i class="fas fa-envelope"></i> Contact Developer to Resolve
-        </a>
+        <div id="destination-display" class="destination-url">https://nexorawebsite.com.ng</div>
 
-        <div class="footer-links">
-            <a href="https://t.me/clicksensewithDivineTv/695"><i class="fas fa-phone"></i> Call Support</a>
-            <span>Ref ID: ADM-240126</span>
+        <div class="redirect-status">
+            Redirecting automatically in <span id="timer" class="countdown">6</span>s...
+        </div>
+
+        <div class="btn-group">
+            <a id="destination-link" href="https://nexorawebsite.com.ng" class="btn btn-primary">Proceed Now</a>
+            <a href="javascript:history.back()" class="btn btn-secondary">Go Back</a>
+        </div>
+
+        <div class="footer-note">
+            Ad Verification Gateway • Secure Tracking ID: #TRK-98214
         </div>
     </div>
 
+    <script>
+        // Target URL configuration
+        const targetURL = "https://nexorawebsite.com.ng";
+        
+        // Update DOM elements safely
+        document.getElementById('destination-link').href = targetURL;
+        document.getElementById('destination-display').textContent = targetURL;
+
+        let timeLeft = 6;
+        const timerElement = document.getElementById('timer');
+
+        // Countdown timer loop
+        const countdownInterval = setInterval(() => {
+            timeLeft--;
+            timerElement.textContent = timeLeft;
+
+            if (timeLeft <= 0) {
+                clearInterval(countdownInterval);
+                window.location.replace(targetURL); // Using replace to avoid back-button loops to this page
+            }
+        }, 1000);
+    </script>
 </body>
 </html>
-
